@@ -46,7 +46,7 @@ ls -la ~/.x_creds_akun1   # expect -rw-------
 ## Step 2 — Install the helper
 
 ```bash
-curl -o ~/x.py https://raw.githubusercontent.com/<USER>/<REPO>/main/x.py
+curl -o ~/x.py https://raw.githubusercontent.com/didin-lab/agent-x-twitter-cookie-auth/master/x.py
 chmod +x ~/x.py
 pip install requests   # (or use any venv that has requests)
 ```
@@ -83,7 +83,7 @@ Paste this to your agent, then give it the cookies when it asks:
 > Bantu aku konekin akun X/Twitter supaya kamu bisa like, retweet, follow, reply, dan post. Pakai cookie auth (auth_token + ct0).
 >
 > 1. Minta aku `auth_token` (40 hex) + `ct0` (160 hex) dari browser (DevTools → Cookies → x.com). Simpan ke `~/.x_creds_<nama>` format plain `KEY=value`, `chmod 600`. Jangan echo/commit kredensial ke chat.
-> 2. Simpan `x.py` dari `https://raw.githubusercontent.com/<USER>/<REPO>/main/x.py`. CLI-nya baca `X_CREDS` dari env buat switch akun.
+> 2. Simpan `x.py` dari `https://raw.githubusercontent.com/didin-lab/agent-x-twitter-cookie-auth/master/x.py`. CLI-nya baca `X_CREDS` dari env buat switch akun.
 > 3. Endpoint: like → GraphQL FavoriteTweet · rt → CreateRetweet · reply/quote/post → CreateTweet · follow → POST api.x.com/1.1/friendships/create.json (header wajib: UA Chrome, Origin, Referer, x-csrf-token).
 > 4. Verifikasi dulu pakai `whoami` / `user-info <handle>`.
 > 5. Anti-bot: jeda 30-60 detik antar akun, teks beda tiap akun (hindari kode 187 duplikat & 226 anti-bot), follow lewat REST.
